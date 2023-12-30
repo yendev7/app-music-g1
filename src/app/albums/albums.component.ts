@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Album } from '../album';
 import { ALBUMS } from '../mock-albums';
 
 @Component({
@@ -8,5 +9,11 @@ import { ALBUMS } from '../mock-albums';
 })
 export class AlbumsComponent {
   title = "Page Principale Album Music";
-  albums = ALBUMS;  
+  albums = ALBUMS;
+  /**Variable qui détermine l'album dont on veut voir le détail */
+  selectedAlbum?: Album = undefined;
+  
+  onSelect(album: Album) {
+    this.selectedAlbum = album;
+  }
 }
